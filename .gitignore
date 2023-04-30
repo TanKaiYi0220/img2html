@@ -1,0 +1,5 @@
+*.drawio*
+example.gui
+chromedriver.exe
+dataset/
+__pycache__/
