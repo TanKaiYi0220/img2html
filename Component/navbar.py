@@ -90,3 +90,9 @@ class NavBar:
     def traverse(self, tabs):
         print("\t" * tabs, end="")
         print(self.token+"|"+self.classes[self.navbar_idx]+"|"+str(self.item_num))
+
+    def to_dsl(self, tabs):
+        spacing = "\t" * tabs
+        token = self.token + "|" + self.classes[self.navbar_idx] + "|" + str(self.item_num)
+        
+        return spacing + token + "\n"

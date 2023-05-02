@@ -21,3 +21,10 @@ class Header:
         self.content.traverse(tabs+1)
         print("\t" * tabs, end="")
         print("}")
+
+    def to_dsl(self, tabs):
+        spacing = "\t" * tabs
+        token = self.token
+        content = self.content.to_dsl(tabs+1)
+        
+        return spacing + token + "{\n" + content + spacing + "}\n"

@@ -67,3 +67,9 @@ class Carousel:
     def traverse(self, tabs):
         print("\t" * tabs, end="")
         print(self.token+"|"+self.classes[self.class_idx])
+
+    def to_dsl(self, tabs):
+        spacing = "\t" * tabs
+        token = self.token + "|" + self.classes[self.class_idx]
+        
+        return spacing + token + "\n"

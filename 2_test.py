@@ -20,3 +20,7 @@ if __name__ == "__main__":
         file.write(str(soup))
         
     print(my_layout.traverse(0))
+
+    dsl = my_layout.to_dsl(0)
+
+    print(dsl)

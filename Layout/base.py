@@ -42,3 +42,12 @@ class Base:
         self.footer.traverse(tabs+1)
         print("\t" * tabs, end="")
         print("}")
+
+    def to_dsl(self, tabs):
+        spacing = "\t" * tabs
+        token = self.token
+        header = self.header.to_dsl(tabs+1)
+        body = self.body.to_dsl(tabs+1)
+        footer = self.footer.to_dsl(tabs+1)
+        
+        return spacing + token + "{\n" + header + body + footer + spacing + "}\n"

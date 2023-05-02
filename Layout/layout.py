@@ -38,3 +38,10 @@ class Layout:
         self.base.traverse(tabs+1)
         print("\t" * tabs, end="")
         print("}")
+
+    def to_dsl(self, tabs):
+        spacing = "\t" * tabs
+        token = self.token
+        base = self.base.to_dsl(tabs+1)
+        
+        return spacing + token + "{\n" + base + spacing + "}\n"

@@ -35,3 +35,9 @@ class Dropdown:
     def traverse(self, tabs):
         print("\t" * tabs, end="")
         print(self.token+"|"+self.button_classes[self.button_class_idx])
+
+    def to_dsl(self, tabs):
+        spacing = "\t" * tabs
+        token = self.token + "|" + self.button_classes[self.button_class_idx]
+        
+        return spacing + token + "\n"

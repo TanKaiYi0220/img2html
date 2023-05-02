@@ -62,3 +62,8 @@ class Accordion:
     def traverse(self, tabs):
         print("\t" * tabs, end="")
         print(self.token+"|"+str(self.num_items))
+
+    def to_dsl(self, tabs):
+        spacing = "\t" * tabs
+        token = self.token + "|" + str(self.num_items)
+        return spacing + token + "\n"

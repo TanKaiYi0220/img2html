@@ -27,3 +27,10 @@ class Row:
         self.cols.traverse(tabs+1)
         print("\t" * tabs, end="")
         print("}")
+
+    def to_dsl(self, tabs):
+        spacing = "\t" * tabs
+        token = self.token
+        cols = self.cols.to_dsl(tabs+1)
+        
+        return spacing + token + "{\n" + cols + spacing + "}\n"

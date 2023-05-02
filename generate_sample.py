@@ -58,12 +58,11 @@ def generate_html(i):
         print(f"HTML write into {file_name}")
         file.write(str(soup))
 
-    # TODO: DSL
-    # dsl = my_layout.traverse(0)
-    # dsl_file_name = file_name.replace("html", "dsl")
-    # with open(dsl_file_name, "w", encoding = 'utf-8') as file:
-    #     print(f"DSL Write into {dsl_file_name}")
-    #     file.write(str(dsl))
+    dsl = my_layout.to_dsl(0)
+    dsl_file_name = file_name.replace("html", "dsl")
+    with open(dsl_file_name, "w", encoding = 'utf-8') as file:
+        print(f"DSL Write into {dsl_file_name}")
+        file.write(str(dsl))
 
     screenshot(file_name=file_name)
 

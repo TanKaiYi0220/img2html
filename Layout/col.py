@@ -46,3 +46,10 @@ class Column:
                 content.traverse(tabs+1)
         print("\t" * tabs, end="")
         print("}")
+
+    def to_dsl(self, tabs):
+        spacing = "\t" * tabs
+        token = self.token + "|" + str(self.col_num)
+        content = [c.to_dsl(tabs+1) for c in self.content if c != None]
+        
+        return spacing + token + "{\n" + "\n".join(content) + spacing + "}\n"

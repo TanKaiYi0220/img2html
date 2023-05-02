@@ -35,3 +35,10 @@ class Body:
             content.traverse(tabs+1)
         print("\t" * tabs, end="")
         print("}")
+
+    def to_dsl(self, tabs):
+        spacing = "\t" * tabs
+        token = self.token
+        content = [c.to_dsl(tabs+1) for c in self.rows]
+        
+        return spacing + token + "{\n" + "\n".join(content) + spacing + "}\n"
